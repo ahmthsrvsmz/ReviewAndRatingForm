@@ -1,10 +1,58 @@
 .App {
   text-align: center;
+  border: #116979 1px solid;
+  padding: 2%;
+  width: 75%;
+  margin: auto;
 }
 
 .App-logo {
   height: 40vmin;
-  pointer-events: none;
+}
+.logo-header {
+  width: 100%;
+  top: 0;
+  background-color: #116979;
+  color: white;
+  margin: 10px;
+  border: #116979 2px solid;
+  border-radius: 50%;
+}
+
+.headerRating {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: yellow;
+  font-family: "Times New Roman", Times, serif;
+}
+.headerRating p {
+  margin: 10px;
+}
+.ratingReview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: solid 1px grey;
+  padding: 10px;
+}
+
+.review {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.textField {
+  flex-grow: 2;
+  margin: 10px;
+}
+
+.button {
+  margin: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,18 +62,37 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: top;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #282c34;
 }
 
-.App-link {
-  color: #61dafb;
+.allComments p {
+  margin: 40px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 24px;
+}
+
+.reviewComponent {
+  border: 1px solid grey;
+  width: 100%;
+}
+.allReviews {
+  width: 100%;
+}
+.reviewComponent {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.trigger {
+  margin: 10px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 24px;
+  color: #116979;
 }
 
 @keyframes App-logo-spin {
