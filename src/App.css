@@ -9,6 +9,10 @@
 .App-logo {
   height: 40vmin;
 }
+
+.App-header {
+  margin-bottom: 30px;
+}
 .logo-header {
   width: 100%;
   top: 0;
