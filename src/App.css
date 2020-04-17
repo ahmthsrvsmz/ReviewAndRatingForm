@@ -13,22 +13,12 @@
 .App-header {
   margin-bottom: 30px;
 }
-.logo-header {
-  width: 100%;
-  top: 0;
-  background-color: #116979;
-  color: white;
-  margin: 10px;
-  border: #116979 2px solid;
-  border-radius: 50%;
-}
 
 .headerRating {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: yellow;
   font-family: "Times New Roman", Times, serif;
 }
 .headerRating p {
@@ -48,6 +38,11 @@
   flex-direction: row;
   justify-content: center;
   text-align: center;
+}
+
+.nameField {
+  flex: 1;
+  margin-top: 10px;
 }
 
 .textField {
@@ -97,13 +92,4 @@
   font-family: "Times New Roman", Times, serif;
   font-size: 24px;
   color: #116979;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

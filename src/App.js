@@ -1,11 +1,12 @@
 import React from "react";
-import RatingAndReview from "./components/RatingAndReview";
+import ReviewList from "./components/ReviewList";
+
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <RatingAndReview />
+      <ReviewList />
     </div>
   );
 }
