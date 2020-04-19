@@ -1,75 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import Rating from "@material-ui/lab/Rating";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
-const boolean = true;
+const initial = {
+  rating: 0,
+  author: "",
+  review: "",
+};
 
-function ReviewFrom({
-  handleChangeRating,
-  handleChangeReview,
-  handleChangeAuthor,
-  handleSubmit,
-  average,
-  rating,
-  review,
-  author,
-  classes,
-}) {
+function ReviewFrom({ onSubmit }) {
+  const [formData, setFormData] = useState(initial);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const result = {
+      ...formData,
+      date: new Date().toLocaleString(),
+      rating: Number(formData.rating),
+    };
+    onSubmit(result);
+    setFormData(initial);
+  };
+
   return (
     <div>
-      <header className="App-header">
-        <div>
-          <div className="headerRating">
-            <Rating
-              name="half-rating-read"
-              value={average}
-              precision={0.5}
-              number={average}
-              readOnly
-            />
-            <p>{average}</p>
-          </div>
-        </div>
-      </header>
       <div className="ratingReview">
         <div className="rating">
           <Rating
-            name="half-rating"
+            name="rating"
             defaultValue={0}
-            value={rating}
-            onChange={handleChangeRating}
+            value={Number(formData.rating)}
+            onChange={handleChange}
           />
         </div>
-        <form className={classes.root} noValidate autoComplete="off">
+        <form autoComplete="off" onSubmit={handleSubmit}>
           <div className="review">
             <div className="nameField">
               <TextField
-                key="author"
-                id="outlined-basic"
+                name="author"
                 label="Author"
-                value={author}
+                value={formData.author}
                 variant="outlined"
-                onChange={handleChangeAuthor}
+                required
+                onChange={handleChange}
               />
             </div>
             <div className="textField">
               <TextField
-                key="textField"
-                id="outlined-basic"
-                label="Review (Max 160 - Min 5 Character)"
+                name="review"
+                label="Review"
                 variant="outlined"
-                value={review}
-                fullWidth={boolean}
-                onChange={handleChangeReview}
+                value={formData.review}
+                fullWidth
+                required
+                onChange={handleChange}
               />
             </div>
             <div className="button">
               <Button
+                type="submit"
                 variant="contained"
                 color="primary"
-                fullWidth={boolean}
-                onClick={handleSubmit}
+                fullWidth
               >
                 Submit
               </Button>
